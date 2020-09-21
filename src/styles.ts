@@ -26,11 +26,14 @@ export const AppContainer = styled.div`
 `
 interface DragPreviewContainerProps {
   isHidden?: boolean
+  isPreview?: boolean
 }
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
+transform: ${props => (props.isPreview ? "rotate(5deg)" : undefined)};
 opacity: ${props => (props.isHidden ? 0 : 1)};
 `
+
 
 export const ColumnContainer = styled(DragPreviewContainer)`
 background-color: #ebecf0;
