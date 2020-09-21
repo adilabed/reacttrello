@@ -13,16 +13,24 @@ export const AppContainer = styled.div`
   padding: 20px;
   width: 100%;
 `
+interface DragPreviewContainerProps {
+  isHidden?: boolean
+}
 
-export const ColumnContainer = styled.div`
-  background-color: #ebecf0;
-  width: 300px;
-  min-height: 40px;
-  margin-right: 20px;
-  border-radius: 3px;
-  padding: 8px 8px;
-  flex-grow: 0;
+export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
+opacity: ${props => (props.isHidden ? 0.3 : 1)};
 `
+
+export const ColumnContainer = styled(DragPreviewContainer)`
+background-color: #ebecf0;
+width: 300px;
+min-height: 40px;
+margin-right: 20px;
+border-radius: 3px;
+padding: 8px 8px;
+flex-grow: 0;
+`
+
 
 export const ColumnTitle = styled.div`
   padding: 6px 6px 12px;
@@ -77,4 +85,6 @@ export const NewItemInput = styled.input`
   padding: 0.5rem 1rem;
   width: 100%;
 `
+
+
 
