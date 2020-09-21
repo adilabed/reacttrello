@@ -1,5 +1,6 @@
 import React from "react";
 import {ColumnContainer, ColumnTitle} from './styles'
+import {AddNewItem} from "./AddNewItem";
 
 
 interface ColumnProps {
@@ -12,6 +13,7 @@ export const Column = ({ text, children } : React.PropsWithChildren<ColumnProps>
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>
       {children}
+      <AddNewItem onAdd={console.log} toggleButtonText={'Add task'} dark />
     </ColumnContainer>
   )
 }
